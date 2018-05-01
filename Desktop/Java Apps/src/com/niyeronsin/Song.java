@@ -6,11 +6,30 @@ public class Song {
     private String genre;
     private String duration;
     private int likes;
+    private Song prevSong;
+    private Song nextSong;
+
+    public Song getPrevSong() {
+        return prevSong;
+    }
+
+    public void setPrevSong(Song prevSong) {
+        this.prevSong = prevSong;
+    }
+
+    public Song getNextSong() {
+        return nextSong;
+    }
+
+    public void setNextSong(Song nextSong) {
+        this.nextSong = nextSong;
+    }
 
     public Song(String artistName, String songName, String genre, String duration) {
         this.artistName = artistName;
         this.songName = songName;
         this.genre = genre;
+
         this.duration = duration;
     }
 
@@ -52,5 +71,10 @@ public class Song {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    @Override
+    public String toString() {
+        return this.songName + " by " + this.artistName + " has a genre of " + this.genre + ", duration of " + this.duration + " and " + this.likes + " like";
     }
 }
